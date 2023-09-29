@@ -33,71 +33,83 @@ fun main() {
 
     // 4. Explore default values and compact functions
     // Step 1: Default parameter
-    swim()
-    swim("slow")
-    swim(speed = "turtle-like")
+    // swim()
+    // swim("slow")
+    // swim(speed = "turtle-like")
     // Step2: Required parameters
-     feedFish()
+    // feedFish()
     // Step3: Make compact functions
 
+    // 5. Get started with filters
+    val decorations = listOf(
+        "rock",
+        "pagoda",
+        "plastic plant",
+        "alligator",
+        "flowerpot"
+    )
+
+    val filtered = decorations.filter { it[0] == 'p' }
+    println(filtered)
 }
+
 //
 //fun printHello(){
 //    println("Hello")
 //}
-
-fun feedFish(){
-    val day = randomDay()
-    val food = fishFood(day)
-    println("Today is $day and the fish eats $food")
-    println("Change water: ${shouldChangeWater(day)}")
-}
-
-fun randomDay() : String{
-    val days = arrayOf(
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday")
-
-    val randomIndex = Random().nextInt(days.size)
-    return days[randomIndex]
-}
-
-fun fishFood(day: String) : String{
-    var food = ""
-    when (day) {
-        "Monday" -> food = "flakes"
-        "Tuesday" -> food = "pellets"
-        "Wednesday" -> food = "redworms"
-        "Thursday" -> food = "granules"
-        "Friday" -> food = "mosquitoes"
-        "Saturday" -> food = "lettuce"
-        "Sunday" -> food = "plankton"
-    }
-    return food
-}
-
-fun swim(speed: String = "fast"){
-    println("Swimming $speed")
-}
-
-fun shouldChangeWater(
-    day: String,
-    temperature: Int = 22,
-    dirty: Int = 20)
-: Boolean{
-    return when{
-        isTooHot(temperature) -> true
-        isDirty(dirty) -> true
-        isSunday(day) -> true
-        else -> false
-    }
-}
-
-fun isTooHot(temperature: Int) = temperature > 30
-fun isDirty(dirty: Int) = dirty > 30
-fun isSunday(day: String) = day == "Sunday"
+//
+//fun feedFish(){
+//    val day = randomDay()
+//    val food = fishFood(day)
+//    println("Today is $day and the fish eats $food")
+//    println("Change water: ${shouldChangeWater(day)}")
+//}
+//
+//fun randomDay() : String{
+//    val days = arrayOf(
+//        "Monday",
+//        "Tuesday",
+//        "Wednesday",
+//        "Thursday",
+//        "Friday",
+//        "Saturday",
+//        "Sunday")
+//
+//    val randomIndex = Random().nextInt(days.size)
+//    return days[randomIndex]
+//}
+//
+//fun fishFood(day: String) : String{
+//    var food = ""
+//    when (day) {
+//        "Monday" -> food = "flakes"
+//        "Tuesday" -> food = "pellets"
+//        "Wednesday" -> food = "redworms"
+//        "Thursday" -> food = "granules"
+//        "Friday" -> food = "mosquitoes"
+//        "Saturday" -> food = "lettuce"
+//        "Sunday" -> food = "plankton"
+//    }
+//    return food
+//}
+//
+//fun swim(speed: String = "fast"){
+//    println("Swimming $speed")
+//}
+//
+//fun shouldChangeWater(
+//    day: String,
+//    temperature: Int = 22,
+//    dirty: Int = 20)
+//: Boolean{
+//    return when{
+//        isTooHot(temperature) -> true
+//        isDirty(dirty) -> true
+//        isSunday(day) -> true
+//        else -> false
+//    }
+//}
+//
+//fun isTooHot(temperature: Int) = temperature > 30
+//fun isDirty(dirty: Int) = dirty > 30
+//fun isSunday(day: String) = day == "Sunday"
