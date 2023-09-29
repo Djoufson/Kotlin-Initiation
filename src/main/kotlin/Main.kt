@@ -3,7 +3,7 @@ import java.util.Random
 /*
 * TP 1 d'Atelier de dev mobile
 * CHE BENE 19G00266
-* NAGA DANIELLE 17G
+* NAGA DANIELLE 17G97488
 * ---
 * Pour assurer que le code est correct, on va commenter
 * le code de chaque partie.
@@ -29,7 +29,16 @@ fun main() {
     // println(secondMessage)
 
     // 3. Learn more about functions
-    feedFish()
+    // feedFish()
+
+    // 4. Explore default values and compact functions
+    // Step 1: Default parameter
+    swim()
+    swim("slow")
+    swim(speed = "turtle-like")
+    // Step2: Required parameters
+     feedFish()
+    // Step3: Make compact functions
 
 }
 //
@@ -41,6 +50,7 @@ fun feedFish(){
     val day = randomDay()
     val food = fishFood(day)
     println("Today is $day and the fish eats $food")
+    println("Change water: ${shouldChangeWater(day)}")
 }
 
 fun randomDay() : String{
@@ -70,3 +80,24 @@ fun fishFood(day: String) : String{
     }
     return food
 }
+
+fun swim(speed: String = "fast"){
+    println("Swimming $speed")
+}
+
+fun shouldChangeWater(
+    day: String,
+    temperature: Int = 22,
+    dirty: Int = 20)
+: Boolean{
+    return when{
+        isTooHot(temperature) -> true
+        isDirty(dirty) -> true
+        isSunday(day) -> true
+        else -> false
+    }
+}
+
+fun isTooHot(temperature: Int) = temperature > 30
+fun isDirty(dirty: Int) = dirty > 30
+fun isSunday(day: String) = day == "Sunday"
