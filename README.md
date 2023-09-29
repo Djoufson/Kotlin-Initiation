@@ -19,7 +19,7 @@ git checkout 4001ea7
 
 Et pour revenir à l'état actuel on ecrira:
 ```shell
-git checkout main
+git checkout master
 ```
 ---
 # Membres du groupe
