@@ -41,16 +41,26 @@ fun main() {
     // Step3: Make compact functions
 
     // 5. Get started with filters
-    val decorations = listOf(
-        "rock",
-        "pagoda",
-        "plastic plant",
-        "alligator",
-        "flowerpot"
-    )
+    // val decorations = listOf(
+    //     "rock",
+    //     "pagoda",
+    //     "plastic plant",
+    //     "alligator",
+    //     "flowerpot"
+    // )
 
-    val filtered = decorations.filter { it[0] == 'p' }
-    println(filtered)
+    // val filtered = decorations.filter { it[0] == 'p' }
+    // println(filtered)
+
+    // 6. Get started with lambdas and HOF (Higher-Order Functions)
+    // Step 1: Learn about lambdas
+    val dirtyLevel = 20
+    val waterFilter: (Int) -> Int = { dirty: Int -> dirty / 2 }
+    println(waterFilter(dirtyLevel))
+
+    // Step 2: Create a HOF
+    println(updateDirty(30, waterFilter))
+    println(updateDirty(30, ::increaseDirty))
 }
 
 //
@@ -113,3 +123,12 @@ fun main() {
 //fun isTooHot(temperature: Int) = temperature > 30
 //fun isDirty(dirty: Int) = dirty > 30
 //fun isSunday(day: String) = day == "Sunday"
+
+fun updateDirty(
+    dirty: Int,
+    operation: (Int) -> Int
+): Int{
+    return operation(dirty)
+}
+
+fun increaseDirty(start: Int) = start + 1
