@@ -11,9 +11,8 @@ fun main(){
 }
 
 fun buildAquarium(){
-    val myAquarium = Aquarium()
+    val myAquarium = Aquarium(numberOfFish =  29)
     myAquarium.printSize()
-    myAquarium.changeHeight(10)
-    println("____________")
+    myAquarium.changeVolume(70)
     myAquarium.printSize()
 }
