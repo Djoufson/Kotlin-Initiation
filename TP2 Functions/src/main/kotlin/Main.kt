@@ -1,7 +1,7 @@
 import java.util.Random
 
 /*
-* TP 1 d'Atelier de dev mobile
+* TP 2 d'Atelier de dev mobile
 * CHE BENE 19G00266
 * NAGA DANIELLE 17G97488
 * ---
