@@ -1,8 +1,19 @@
 package example.myapp.decor
 
+import example.myapp.Color
+import example.myapp.Direction
+
 fun main(){
-    makeDecorations()
-    makeDecorations2()
+//    makeDecorations()
+//    makeDecorations2()
+    printEnums()
+}
+
+fun printEnums(){
+    println(Direction.NORTH.name)
+    println(Color.RED.ordinal)
+    println(Color.GREEN.rgb)
+    println(Color.BLUE)
 }
 
 fun makeDecorations(){
